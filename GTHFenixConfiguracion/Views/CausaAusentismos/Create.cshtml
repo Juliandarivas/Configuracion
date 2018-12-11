@@ -1,23 +1,32 @@
-﻿@model Entidades.LicenciaRemuneradaCausa
+﻿@model Entidades.CausaAusentismo
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Editar</h2>
+<h2>Crear</h2>
 
-<h4>Licencia Remunerada Causa</h4>
+<h4>Causa Ausentismo</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Descripcion" class="control-label">Descripción</label>
                 <input asp-for="Descripcion" class="form-control" />
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remunerado" class="control-label"></label>
+                <input asp-for="Remunerado" class="form-control" />
+                <span asp-validation-for="Remunerado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescuentaDomingo" class="control-label">Descuenta Domingo</label>
+                <input asp-for="DescuentaDomingo" class="form-control" />
+                <span asp-validation-for="DescuentaDomingo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IdItem" class="control-label">Ítem</label>
@@ -32,14 +41,14 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-success" />
+                <input type="submit" value="Crear" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a class="btn btn-default" asp-action="Index">Volver A La Lista</a>
+    <a class="btn btn-default" asp-action="Index">Vovler A La Lista</a>
 </div>
 
 @section Scripts {

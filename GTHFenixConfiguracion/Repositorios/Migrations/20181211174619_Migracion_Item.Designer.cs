@@ -4,14 +4,16 @@ using GTHFenixConfiguracion.Repositorios;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GTHFenixConfiguracion.Repositorios.Migrations
 {
     [DbContext(typeof(FenixContexto))]
-    partial class FenixContextoModelSnapshot : ModelSnapshot
+    [Migration("20181211174619_Migracion_Item")]
+    partial class Migracion_Item
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

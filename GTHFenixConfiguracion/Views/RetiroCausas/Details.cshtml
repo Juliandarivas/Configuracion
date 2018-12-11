@@ -1,4 +1,4 @@
-﻿@model Entidades.LicenciaRemuneradaCausa
+﻿@model Entidades.RetiroCausa
 
 @{
     ViewData["Title"] = "Details";
@@ -8,7 +8,7 @@
 <h2>Detalles</h2>
 
 <div>
-    <h4>Licencia Remunerada Causa</h4>
+    <h4>Retiro Causa</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -18,16 +18,10 @@
             @Html.DisplayFor(model => model.Descripcion)
         </dd>
         <dt>
-            Ítem
+            Categoría
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.IdItem)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Activo)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Activo)
+            @Html.DisplayFor(model => model.RetiroCategoria.Id)
         </dd>
     </dl>
 </div>

@@ -1,11 +1,11 @@
-﻿@model IEnumerable<Entidades.LicenciaRemuneradaCausa>
+﻿@model IEnumerable<Entidades.CausaAusentismo>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Licencias Remuneradas Causas</h2>
+<h2>Causas Ausentismos</h2>
 
 <p>
     <a class="btn btn-success" asp-action="Create">Crear Nuevo</a>
@@ -15,6 +15,12 @@
         <tr>
             <th>
                 Descripción
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remunerado)
+            </th>
+            <th>
+                Descuenta Domingo
             </th>
             <th>
                 Ítem
@@ -33,7 +39,13 @@
                     @Html.DisplayFor(modelItem => item.Descripcion)
                 </td>
                 <td>
-                    @Html.DisplayFor(Items => item.Item.DescripcionCompleta)
+                    @Html.DisplayFor(modelItem => item.Remunerado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescuentaDomingo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdItem)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Activo)

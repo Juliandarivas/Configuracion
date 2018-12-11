@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Entidades.CausaIncapacidad>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Causas Incapacidades</h2>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Crear Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Meses Promedio
+            </th>
+            <th>
+                Porcentaje Empleador
+            </th>
+            <th>
+                Porcentaje Entidad
+            </th>
+            <th>
+                Días Empleador
+            </th>
+            <th>
+                Días Máximos
+            </th>
+            <th>
+                Tipo Conteo Días
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricpcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MesesPromedio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PorcentajeEmpleador)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PorcentajeEntidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiasEmpleador)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiasMaximos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoConteoDias)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Entidad)
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

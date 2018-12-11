@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GTHFenixConfiguracion", "GT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{52940910-E06F-450C-AD64-FC92CF8D84AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enumerables", "Enumerables\Enumerables.csproj", "{D52F5D44-C95F-4366-A32F-E27003C452EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{52940910-E06F-450C-AD64-FC92CF8D84AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52940910-E06F-450C-AD64-FC92CF8D84AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52940910-E06F-450C-AD64-FC92CF8D84AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52F5D44-C95F-4366-A32F-E27003C452EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52F5D44-C95F-4366-A32F-E27003C452EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52F5D44-C95F-4366-A32F-E27003C452EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52F5D44-C95F-4366-A32F-E27003C452EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

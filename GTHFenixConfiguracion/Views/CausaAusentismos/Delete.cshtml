@@ -1,4 +1,4 @@
-﻿@model Entidades.LicenciaRemuneradaCausa
+﻿@model Entidades.CausaAusentismo
 
 @{
     ViewData["Title"] = "Delete";
@@ -9,7 +9,7 @@
 
 <h3>¿Está seguro de que desea eliminarlo?</h3>
 <div>
-    <h4>Licencia Remunerada Causa</h4>
+    <h4>Causa Ausentismo</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,6 +17,18 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Remunerado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Remunerado)
+        </dd>
+        <dt>
+            Descuenta Domingo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescuentaDomingo)
         </dd>
         <dt>
             Ítem

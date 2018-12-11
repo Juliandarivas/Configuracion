@@ -1,0 +1,73 @@
+﻿@model Entidades.CausaIncapacidad
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Causa Incapacidad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Descripción
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descricpcion)
+        </dd>
+        <dt>
+            Meses Promedio
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MesesPromedio)
+        </dd>
+        <dt>
+            Porcentaje Empleador
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PorcentajeEmpleador)
+        </dd>
+        <dt>
+            Porcentaje Entidad
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PorcentajeEntidad)
+        </dd>
+        <dt>
+            Días Empleador
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DiasEmpleador)
+        </dd>
+        <dt>
+            Días Máximos
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DiasMaximos)
+        </dd>
+        <dt>
+            Tipo Conteo Días
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoConteoDias)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Entidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entidad)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a class="btn btn-default" asp-action="Index">Volver A La Lista</a>
+</div>

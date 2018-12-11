@@ -4,23 +4,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Entidades;
 using GTHFenixConfiguracion.Repositorios;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GTHFenixConfiguracion.Controllers
 {
-    public class LicenciaRemuneradaCausasController : Controller
+    public class RetiroCategoriasController : Controller
     {
         private readonly FenixContexto _context;
 
-        public LicenciaRemuneradaCausasController(FenixContexto context)
+        public RetiroCategoriasController(FenixContexto context)
         {
             _context = context;
         }
 
         public async Task<IActionResult> Index()
         {
-            //ViewData["Items"] = new SelectList(_context.Items, "ItmId", "Descripcion");
-            return View(await _context.LicenciaRemuneradaCausas.Include(r => r.Item).ToListAsync());
+            return View(await _context.RetiroCategorias.ToListAsync());
         }
 
         public async Task<IActionResult> Details(int? id)
@@ -30,33 +28,32 @@ namespace GTHFenixConfiguracion.Controllers
                 return NotFound();
             }
 
-            var licenciaRemuneradaCausa = await _context.LicenciaRemuneradaCausas
+            var retiroCategoria = await _context.RetiroCategorias
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (licenciaRemuneradaCausa == null)
+            if (retiroCategoria == null)
             {
                 return NotFound();
             }
 
-            return View(licenciaRemuneradaCausa);
+            return View(retiroCategoria);
         }
 
         public IActionResult Create()
         {
-            //ViewData["Items"] = new SelectList(_context.Items, "ItmId", "Descripcion");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Descripcion,IdItem,Activo")] LicenciaRemuneradaCausa licenciaRemuneradaCausa)
+        public async Task<IActionResult> Create([Bind("Id,Descripcion")] RetiroCategoria retiroCategoria)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(licenciaRemuneradaCausa);
+                _context.Add(retiroCategoria);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(licenciaRemuneradaCausa);
+            return View(retiroCategoria);
         }
 
         public async Task<IActionResult> Edit(int? id)
@@ -66,19 +63,19 @@ namespace GTHFenixConfiguracion.Controllers
                 return NotFound();
             }
 
-            var licenciaRemuneradaCausa = await _context.LicenciaRemuneradaCausas.FindAsync(id);
-            if (licenciaRemuneradaCausa == null)
+            var retiroCategoria = await _context.RetiroCategorias.FindAsync(id);
+            if (retiroCategoria == null)
             {
                 return NotFound();
             }
-            return View(licenciaRemuneradaCausa);
+            return View(retiroCategoria);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Descripcion,IdItem,Activo")] LicenciaRemuneradaCausa licenciaRemuneradaCausa)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Descripcion")] RetiroCategoria retiroCategoria)
         {
-            if (id != licenciaRemuneradaCausa.Id)
+            if (id != retiroCategoria.Id)
             {
                 return NotFound();
             }
@@ -87,12 +84,12 @@ namespace GTHFenixConfiguracion.Controllers
             {
                 try
                 {
-                    _context.Update(licenciaRemuneradaCausa);
+                    _context.Update(retiroCategoria);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!LicenciaRemuneradaCausaExists(licenciaRemuneradaCausa.Id))
+                    if (!RetiroCategoriaExists(retiroCategoria.Id))
                     {
                         return NotFound();
                     }
@@ -103,7 +100,7 @@ namespace GTHFenixConfiguracion.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(licenciaRemuneradaCausa);
+            return View(retiroCategoria);
         }
 
         public async Task<IActionResult> Delete(int? id)
@@ -113,29 +110,29 @@ namespace GTHFenixConfiguracion.Controllers
                 return NotFound();
             }
 
-            var licenciaRemuneradaCausa = await _context.LicenciaRemuneradaCausas
+            var retiroCategoria = await _context.RetiroCategorias
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (licenciaRemuneradaCausa == null)
+            if (retiroCategoria == null)
             {
                 return NotFound();
             }
 
-            return View(licenciaRemuneradaCausa);
+            return View(retiroCategoria);
         }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var licenciaRemuneradaCausa = await _context.LicenciaRemuneradaCausas.FindAsync(id);
-            _context.LicenciaRemuneradaCausas.Remove(licenciaRemuneradaCausa);
+            var retiroCategoria = await _context.RetiroCategorias.FindAsync(id);
+            _context.RetiroCategorias.Remove(retiroCategoria);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool LicenciaRemuneradaCausaExists(int id)
+        private bool RetiroCategoriaExists(int id)
         {
-            return _context.LicenciaRemuneradaCausas.Any(e => e.Id == id);
+            return _context.RetiroCategorias.Any(e => e.Id == id);
         }
     }
 }

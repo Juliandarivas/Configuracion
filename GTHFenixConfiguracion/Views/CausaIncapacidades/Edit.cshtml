@@ -1,0 +1,77 @@
+﻿@model Entidades.CausaIncapacidad
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Editar</h2>
+
+<h4>Causa Incapacidad</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Descricpcion" class="control-label">Descripción</label>
+                <input asp-for="Descricpcion" class="form-control" />
+                <span asp-validation-for="Descricpcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MesesPromedio" class="control-label">Meses Promedio</label>
+                <input asp-for="MesesPromedio" class="form-control" />
+                <span asp-validation-for="MesesPromedio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PorcentajeEmpleador" class="control-label">Porcentaje Empleador</label>
+                <input asp-for="PorcentajeEmpleador" class="form-control" />
+                <span asp-validation-for="PorcentajeEmpleador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PorcentajeEntidad" class="control-label">Porcentaje Entidad</label>
+                <input asp-for="PorcentajeEntidad" class="form-control" />
+                <span asp-validation-for="PorcentajeEntidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiasEmpleador" class="control-label">Días Empleador</label>
+                <input asp-for="DiasEmpleador" class="form-control" />
+                <span asp-validation-for="DiasEmpleador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiasMaximos" class="control-label">Días Máximos</label>
+                <input asp-for="DiasMaximos" class="form-control" />
+                <span asp-validation-for="DiasMaximos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoConteoDias" class="control-label">Tipo Conteo Días</label>
+                <select asp-for="TipoConteoDias" class="form-control" asp-items="ViewBag.TipoCalendario"></select>
+                <span asp-validation-for="TipoConteoDias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Activo" /> @Html.DisplayNameFor(model => model.Activo)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entidad" class="control-label"></label>
+                <input asp-for="Entidad" class="form-control" />
+                <span asp-validation-for="Entidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-default" asp-action="Index">Volver A La Lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
